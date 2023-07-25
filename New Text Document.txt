@@ -1,0 +1,6 @@
+//Here are some express packages for backend to be instaalled 
+
+npm i express body-parser bcrypt cors dotenv gridfs-stream multer multer-gridfs-storage helmet morgan jsonwebtoken mongoose
+
+// To initialize empty package.json file 
+npm init -y
