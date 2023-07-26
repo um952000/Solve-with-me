@@ -1,18 +1,13 @@
 import express from "express";
 
-import { getPosts, createPost, updatePost, deletePost,likePost } from '../controllers/posts.js'
+//importing Router module from expressJS
+const router = express.Router();
 
 
-const router =  express.Router();
+//http://localhost:5000/posts
+router.get('/',(req,res) =>{
 
-
-router.get('/', getPosts);
-router.post('/', createPost);
-// patch is used for updating existing document
-
-router.patch('/:id', updatePost);
-router.delete('/:id', deletePost);
-router.patch('/:id/likePost', likePost);
-
+      res.send('This Works');
+})
 
 export default router;
