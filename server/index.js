@@ -11,12 +11,13 @@ import postRoutes from './routes/posts.js';
 
 const app = express();
 
-//using express middleware to connect this route to our application
-app.use('./posts', postRoutes);
-
 app.use(bodyParser.json({ limit: "30mb", extended:true}));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended:true}));
 app.use(cors());
+
+//using express middleware to connect this route to our application
+app.use('/posts', postRoutes);
+
 
 //creating a database url
 const CONNECTION_URL = 'mongodb+srv://Utkarsh:5ogNGOBB6h0qaXIf@cluster0.trtblhz.mongodb.net/?retryWrites=true&w=majority';
