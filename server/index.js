@@ -18,6 +18,9 @@ app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
 
 
+app.use('/posts', postRoutes);
+
+
 
 //Database url setup from mongodb atlas
 const CONNECTION_URL = 'mongodb+srv://utkarsh:dRnsMK4m2arCHjHc@cluster0.tfrerci.mongodb.net/?retryWrites=true&w=majority';
@@ -32,5 +35,4 @@ mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: tr
   .then(() => app.listen(PORT, () => console.log(`Server Running on Port= http://localhost:${PORT}`))) // when connection become successful
   .catch((error) => console.log(`${error} did not connect`)); // connection failed
 
-
-  //mongoose.set('useFindAndModify',false);
+//mongoose.set('useFindAndModify',false);

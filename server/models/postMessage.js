@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+//here we are going to create a schema for our application
+
 const postSchema = mongoose.Schema({
 
     title: String,
@@ -30,4 +32,5 @@ const postSchema = mongoose.Schema({
 //collection creation
  const PostMessage = mongoose.model('PostMessage', postSchema);
 
- export default PostMessage;
+//exporting a mongoose model from this file........
+export default PostMessage;

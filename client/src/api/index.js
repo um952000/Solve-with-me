@@ -1,13 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/posts';
+const url = 'http://localhost:5000/posts/';
 
+//function to fetching post from the url that are in the database......................
 export const fetchPosts = () => axios.get(url);
-
-export const createPosts = (newPost)=> axios.post(url,newPost);
-
-export const updatePost = (id, updatedPost) => axios.patch(`${url}/${id}`, updatedPost);
-
-export const deletePost = (id) =>axios.delete(`${url}/${id}`);
-
-export const likePost = ( id)=> axios.patch(`${url}/${id}/likePost`);

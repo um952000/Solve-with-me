@@ -1,18 +1,15 @@
-export default (posts=[],action)=>{
+//here we will talk about the reducers functionalities
+ 
+//state = posts here
 
+export default ( posts = [], action)=>{
     switch(action.type){
-         
-        case 'DELETE':
-            return posts.filter((post) => post._id !== action.payload);
 
-        case 'UPDATE':
-        case 'LIKE':
-            return posts.map((post) => post._id === action.payload._id ? action.payload : post); 
         case 'FETCH_ALL':
             return action.payload;
         case 'CREATE':
-            return [...posts, action.payload]; // array of posts
-        default: return posts;         
-    
+            return posts;
+        default:
+            return posts;
     }
 }
