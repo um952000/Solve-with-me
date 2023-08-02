@@ -14,5 +14,6 @@ export default makeStyles(() => ({
   },
   image: {
     marginLeft: '30px',
+    borderRadius: 15,
   },
 }));

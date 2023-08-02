@@ -14,7 +14,6 @@ export const getPosts = async(req,res) =>{
     catch(error){
 
         res.status(200).json({ message: error.message});
-    
     }
 }
 
