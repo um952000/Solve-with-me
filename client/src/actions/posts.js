@@ -12,4 +12,22 @@ export const getPosts = () => async (dispatch) => {
     } catch (error) {
       console.log(error.message);
     }
-  };
+};
+
+// function for the creation of the new Post.......... 
+
+export const createPost = (post) =>async(dispatch)=>{
+
+   try {
+
+    const {data} = await api.createPost(post);
+
+    dispatch({ type: 'CREATE', payload:data});
+    
+   } catch (error) {
+
+    console.log(error.message);
+    
+   }
+
+}
