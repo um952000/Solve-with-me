@@ -1,5 +1,5 @@
 //import everything from api
-import * as api from '../api';
+import * as api from '../api/index.js';
 
 //Action creators are function that return an action
 

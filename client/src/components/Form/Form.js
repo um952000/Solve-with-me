@@ -38,6 +38,7 @@ const Form = () => {
 
       const clear = () =>{
 
+        setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
 
       }
 

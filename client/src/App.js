@@ -2,16 +2,17 @@ import React,{useEffect} from 'react'
 import {Container, AppBar, Typography, Grow, Grid} from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 
+
+
+import Posts from './components/Posts/Posts';
+import Form from './components/Form/Form';
+
 //importing image
 import Solve from './Images/Solve2.jpg';
 
 import { getPosts } from './actions/posts';
 
-import Posts from './components/Posts/Posts';
-import Form from './components/Form/Form';
-
 import useStyles from './styles';
-
 
 
 const App = () => {
@@ -21,7 +22,7 @@ const App = () => {
       const dispatch = useDispatch();
 
       useEffect(()=>{
-         dispatch(getPosts());
+        dispatch(getPosts());
       },[dispatch]);
 
   return (
