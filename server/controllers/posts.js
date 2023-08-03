@@ -1,9 +1,15 @@
 //here we will declare and define the function for diff diff routers
 
+
+import express from 'express';
+import mongoose from 'mongoose';
 //importing mongoose model
 import PostMessage from "../models/postMessage.js";
 
+const router = express.Router();
+
 export const getPosts = async(req,res) =>{
+   
     try{
         
           const postMessages = await PostMessage.find();
@@ -37,3 +43,5 @@ export const createPost = async (req,res) =>{
 
     }
 }
+
+export default router;
