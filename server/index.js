@@ -1,4 +1,4 @@
-import express, { application } from 'express';
+import express from 'express';
 // body-parser is a middleware that is used to parse the incoming request bodies in a more convenient way. 
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
@@ -10,9 +10,12 @@ import cors from 'cors';
 import postRoutes from './routes/posts.js';
 
 const app = express();
+app.use(express.json());
+app.use(helmet());
+app.use(helmet.crossOriginResourcePolicy({policy: 'cross-origin'}));
 
-app.use(express.json({ limit: "30mb", extended:true}));
-app.use(express.urlencoded({ limit: "30mb", extended:true}));
+app.use(bodyParser.json({ limit: '30mb', extended: true }))
+app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors());
 
 
