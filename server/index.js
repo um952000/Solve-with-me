@@ -1,6 +1,7 @@
 import express from 'express';
 // body-parser is a middleware that is used to parse the incoming request bodies in a more convenient way. 
 import bodyParser from 'body-parser';
+
 import mongoose from 'mongoose';
 // CORS (Cross-Origin Resource Sharing) is a security feature implemented by web browsers to restrict webpages from making requests to a different domain than the one that served the webpage. This is a mechanism designed to enhance the security of web applications and prevent unauthorized access to resources.
 import cors from 'cors';
@@ -10,31 +11,18 @@ import cors from 'cors';
 import postRoutes from './routes/posts.js';
 
 const app = express();
-app.use(express.json());
-app.use(helmet());
-app.use(helmet.crossOriginResourcePolicy({policy: 'cross-origin'}));
 
 app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
-app.use(cors());
+app.use(
+  cors({
+    origin: String("http://localhost:3000"),
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+    credentials: true,
+  })
+);
+app.options("*", cors());
 
-
-// Configure CORS to allow requests from the client-side URL
-// const allowedOrigins = ['http://localhost:3000'];
-// app.use(
-//   cors({
-//     origin: function (origin, callback) {
-//       // Allow requests with no origin (like mobile apps or curl requests)
-//       if (!origin || allowedOrigins.includes(origin)) {
-//         callback(null, true);
-//       } else {
-//         callback(new Error('Not allowed by CORS'));
-//       }
-//     },
-//     methods: 'GET, POST, PUT, DELETE',
-//     allowedHeaders: 'Content-Type, Authorization',
-//   })
-// )
 
 //using express middleware to connect this route to our application
 app.use('/posts', postRoutes);
