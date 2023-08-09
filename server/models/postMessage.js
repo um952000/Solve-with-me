@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 
 //creating a mongoose Schema for our posts
 const postSchema = mongoose.Schema({
+    
     title: String,
     message: String,
     creator: String,
@@ -10,10 +11,13 @@ const postSchema = mongoose.Schema({
     likeCount: {
         type: Number,
         default: 0,
+
     },
     createdAt: {
+
         type: Date,
         default: new Date(),
+
     },
 })
 

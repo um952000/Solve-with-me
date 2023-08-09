@@ -15,6 +15,7 @@ export const getPosts = async(req,res) =>{
    
     try{
         
+        //fetching all the posts
           const postMessages = await PostMessage.find();
           console.log(postMessages);
 
@@ -23,7 +24,7 @@ export const getPosts = async(req,res) =>{
     }
     catch(error){
 
-        res.status(200).json({ message: error.message});
+        res.status(404).json({ message: error.message});
     }
 }
 

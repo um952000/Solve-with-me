@@ -2,9 +2,13 @@
 
 //action.payload are the actual posts
 
-//exporting posts
+//exporting reducer directly here
 
 //initially posts becomes an empty array only
+
+// A reducer is a function that accept the state and action
+
+//Initial state ==> posts=[]
 
 export default (posts=[],action)=>{
 

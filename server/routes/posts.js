@@ -6,9 +6,10 @@ import express from "express";
 //creating a router
 const router = express.Router();
 
+//importing all those functions which will be executed accordingly for the diff diff routes......
 import { getPosts, createPost } from "../controllers/posts.js";
 
-//creating the routers
+//creating the routers(or we can say path to different components)
 router.get('/',getPosts);
 router.post('/',createPost);
 

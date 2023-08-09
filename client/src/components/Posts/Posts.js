@@ -5,6 +5,7 @@ import React from 'react';
 //for fetching the data
 import { useSelector } from 'react-redux';
 
+//Post.js will be used by Posts.js so importing Post.js here
 import Post from './Post/Post';
 
 import useStyles from './Styles';
@@ -21,6 +22,7 @@ const Posts = () => {
 
     <>
     <h1>POSTS</h1>
+     <Post/>
      <Post/>
     </>
    
